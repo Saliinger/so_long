@@ -9,7 +9,7 @@
 
 NAME        := game
 CC        := gcc
-FLAGS    := -Werror -Wall -Wextra ./LibFt/compiled/libft.a ./LibFt/compiled/libprintf.a ./LibFt/compiled/libgnl.a ./mlx42/build/libmlx42.a  -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.9/lib"#-Iinclude -ldl -lglfw -pthread -lm ./mlx42/build/libmlx42.a
+FLAGS    := -Werror -Wall -Wextra ./libft/compiled/libft.a ./libft/compiled/libprintf.a ./libft/compiled/libgnl.a ./mlx42/build/libmlx42.a  -Iinclude -lglfw -L"/opt/homebrew/Cellar/glfw/3.3.9/lib"#-Iinclude -ldl -lglfw -pthread -lm ./mlx42/build/libmlx42.a
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
