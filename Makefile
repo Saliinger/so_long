@@ -41,12 +41,15 @@ BLUE		:= \033[1;34m
 CYAN 		:= \033[1;36m
 RM		    := rm -f
 
+all:		libft libmlx ${NAME}
+
 ${NAME}:	${OBJS}
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
 			${CC} ${FLAGS} -o ${NAME} ${OBJS}
 			@echo "$(GREEN)$(NAME) created[0m ✔️"
 
-all:		${NAME}
+libft:
+	@$(MAKE) -C ./libft
 
 libmlx:
 	@cmake $(LIBMLX) -B $(LIBMLX)/build && make -C $(LIBMLX)/build -j4
@@ -55,10 +58,12 @@ bonus:		all
 
 clean:
 			@ ${RM} *.o */*.o */*/*.o
+			@$(MAKE) -C ./libft clean
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
 
 fclean:		clean
 			@ ${RM} ${NAME}
+			@$(MAKE) -C ./libft fclean
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
 
 re:			fclean all

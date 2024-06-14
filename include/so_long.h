@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/02/22 09:42:14 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/06/14 15:15:34 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 # define SO_LONG_H
 
 // include
-# include "../LibFt/GNL/get_next_line.h"
-# include "../LibFt/libft/libft.h"
-# include "../LibFt/printf/ft_printf.h"
-# include "../mlx42/include/MLX42/MLX42.h"
+# include "../libft/gnl/get_next_line.h"
+# include "../libft/libft/libft.h"
+# include "../libft/printf/ft_printf.h"
+# include "../MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 # include <stdbool.h>
 # include <stdio.h>
