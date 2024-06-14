@@ -1,7 +1,0 @@
-{
-  "files.associations": {
-    "*.embeddedhtml": "html",
-    "so_long.h": "c"
-  },
-  "cmake.configureOnOpen": true
-}

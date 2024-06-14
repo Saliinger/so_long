@@ -48,7 +48,7 @@ void		ft_parsing(t_map map, char **argv);
 void		ft_not_square(t_map map);
 int			ft_verify_wall(t_map map);
 int			ft_valid(t_map map);
-void			ft_map_chequer(t_map map, char **argv);
+void		ft_map_chequer(t_map map, char **argv);
 void		ft_verify_element(t_map map);
 
 // window

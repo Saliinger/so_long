@@ -21,7 +21,7 @@ void	ft_parsing(t_map map, char **argv)
 		return ;
 }
 
-int	open_fd(char **argv, t_map map)
+size_t	open_fd(char **argv, t_map map)
 {
 	size_t	i;
 	char	*line;
