@@ -15,8 +15,8 @@
 void	ft_parsing(t_map map, char **argv)
 {
 	ft_map_chequer(map, argv);
-	// ft_verify_element(map);
-	// ft_not_square(map);
+    ft_verify_element(map);
+	ft_not_square(map);
 	if (ft_valid(map) != 1)
 		return ;
 }
@@ -27,7 +27,7 @@ size_t	open_fd(char **argv, t_map map)
 	char	*line;
 
 	map.fd = open(argv[1], O_RDONLY);
-	i = 1;
+	i = 0;
 	line = get_next_line(map.fd);
 	while (line)
 	{
@@ -57,7 +57,7 @@ void	ft_map_chequer(t_map map, char **argv)
 
 	i = 0;
 	map.y = open_fd(argv, map);
-	map.map = (char **)malloc(sizeof(char *) * (map.y + 100));
+	map.map = (char **)malloc(sizeof(char *) * (map.y + 1));
 	if (map.map == NULL)
 		return ;
 	line = get_next_line(map.fd);

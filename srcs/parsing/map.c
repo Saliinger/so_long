@@ -35,8 +35,8 @@ void	ft_not_square(t_map map)
 
 int	ft_verify_wall(t_map map)
 {
-	int	i;
-	int	j;
+    size_t i;
+	size_t 	j;
 
 	i = 0;
 	while (i < map.y)

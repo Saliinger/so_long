@@ -14,9 +14,7 @@
 # define SO_LONG_H
 
 // include
-# include "../libft/gnl/get_next_line.h"
 # include "../libft/libft/libft.h"
-# include "../libft/printf/ft_printf.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 # include <stdbool.h>
@@ -34,14 +32,15 @@ typedef struct s_map
 	int		w;
 	int		c;
 	int		notsquare;
-	int		y;
-	int		x;
+	size_t 		y;
+	size_t 		x;
 	int		s;
 }			t_map;
 
 // define
 # define WIDTH 256
 # define HEIGHT 256
+# define BUFFER 42
 
 // parsing
 void		ft_parsing(t_map map, char **argv);

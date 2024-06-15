@@ -22,21 +22,12 @@ static void	ft_error(void)
 int	ft_window(t_map map)
 {
 	mlx_t			*mlx;
-	mlx_image_t		*image;
-	unsigned char	*image_data;
-	mlx_image_t		*image;
 
+    (void)map;
 	mlx_set_setting(MLX_MAXIMIZED, true);
 	mlx = mlx_init(WIDTH, HEIGHT, "Game", true);
 	if (!mlx)
 		ft_error();
-	image_data = load_image_data("./assets/Sprout\ Lands\ -\ Sprites\ -\ Basic\ pack/Tilesets/Wooden\ House.png ", 50, 50, 32);
-	if (image_data)
-	{
-		image = mlx_create_image(mlx, 50, 50, 32, image_data);
-		mlx_put_image_to_window(mlx, mlx, image, 0, 0);
-		free(image_data);
-	}
 	mlx_loop(mlx);
 	mlx_terminate(mlx);
 	return (EXIT_SUCCESS);
