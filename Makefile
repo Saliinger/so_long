@@ -2,23 +2,19 @@
 #                                     CONFIG                                   #
 ################################################################################
 
-NAME        := game
-CC          := gcc
+NAME        := so_long
+CC          := cc
 FLAGS       :=  -Werror -Wall -Wextra
 FRAMEWORKS  := -framework Cocoa -framework OpenGL -framework IOKit
-INCLUDES    := -Iinclude -I./libft/includes -I./mlx42/include
-LIBRARIES   := -L./libft/compiled -lft -lprintf -lgnl  -L./mlx42/build -lmlx42 -lglfw
+#LIBRARIES   := -L./libft/compiled -lft -lprintf -lgnl  -L./MLX42/build -lmlx42 -lglfw
+LIBRARIES   := ./libft/compiled/libft.a ./libft/compiled/libprintf.a ./libft/compiled/libgnl.a -L./MLX42/build -lmlx42 -lglfw
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        := srcs/control.c \
-               srcs/parsing/element.c \
+SRCS        := srcs/parsing/element.c \
                srcs/parsing/map.c \
                srcs/parsing/parsing.c \
-               srcs/window.c \
-               srcs/movement/key_call.c \
-               srcs/texture/texture.c \
                main.c
 
 OBJS        := $(SRCS:.c=.o)
@@ -42,14 +38,20 @@ all:        libft libmlx ${NAME}
 
 ${NAME}:    ${OBJS}
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} ${FRAMEWORKS} ${INCLUDES} ${LIBRARIES} -o ${NAME} ${OBJS}
+			${CC} ${FLAGS} ${LIBRARIES} -o ${NAME} ${OBJS}
+			@echo "$(GREEN)$(NAME) created $(CLR_RMV)✔️"
+
+mac:		libft libmlx
+			${OBJS}
+			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
+			${CC} ${FLAGS} ${FRAMEWORKS} ${LIBRARIES} -o ${NAME} ${OBJS}
 			@echo "$(GREEN)$(NAME) created $(CLR_RMV)✔️"
 
 libft:
-	@$(MAKE) -C ./libft
+			@$(MAKE) -C ./libft
 
 libmlx:
-	@cd mlx42 && cmake . -B build && make -C build -j4
+			@cd MLX42 && cmake . -B build && make -C build -j4
 
 bonus:      all
 

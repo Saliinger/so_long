@@ -15,6 +15,8 @@
 
 // include
 # include "../libft/libft/libft.h"
+# include "../libft/gnl/get_next_line.h"
+# include "../libft/printf/ft_printf.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 # include <fcntl.h>
 # include <stdbool.h>
@@ -40,7 +42,6 @@ typedef struct s_map
 // define
 # define WIDTH 256
 # define HEIGHT 256
-# define
 # define BUFFER 42
 
 // parsing

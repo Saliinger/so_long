@@ -29,6 +29,6 @@ int	main(int argc, char **argv)
 	map.x = 0;
 	map.s = 0;
 	ft_parsing(map, argv);
-	ft_window(map);
+	//ft_window(map);
 	return (0);
 }
