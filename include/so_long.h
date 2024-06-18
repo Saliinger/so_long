@@ -40,6 +40,7 @@ typedef struct s_map
 // define
 # define WIDTH 256
 # define HEIGHT 256
+# define
 # define BUFFER 42
 
 // parsing
