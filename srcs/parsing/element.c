@@ -19,7 +19,7 @@ void	ft_verify_element(t_map map)
 
 	i = 0;
 	j = 0;
-	while (map.map[i] != NULL)
+	while (map.map[i])
 	{
 		while (map.map[i][j] != '\0')
 		{
