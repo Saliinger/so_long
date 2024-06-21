@@ -12,25 +12,29 @@
 
 #include "../../include/so_long.h"
 
-void	ft_verify_element(t_map map)
+void	ft_verify_element(t_map *map)
 {
 	size_t	i;
 	size_t	j;
+    t_map *temp;
 
 	i = 0;
 	j = 0;
-	while (map.map[i])
+    temp = map;
+    ft_print(temp->map);
+	while (temp->map[i] != NULL)
 	{
-		while (map.map[i][j] != '\0')
+        j = 0;
+		while (temp->map[i][j] != '\0')
 		{
-			if (map.map[i][j] == 'e')
-				map.e += 1;
-			if (map.map[i][j] == 'p')
-				map.p += 1;
-			if (map.map[i][j] == 'c')
-				map.c += 1;
-			if (map.map[i][j] == '0')
-				map.s += 1;
+			if (temp->map[i][j] == 'e')
+				temp->e += 1;
+			if (temp->map[i][j] == 'p')
+				temp->p += 1;
+			if (temp->map[i][j] == 'c')
+				temp->c += 1;
+			if (temp->map[i][j] == '0')
+				temp->s += 1;
 			j++;
 		}
 		i++;

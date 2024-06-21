@@ -12,40 +12,42 @@
 
 #include "../../include/so_long.h"
 
-void	ft_not_square(t_map map)
+void	ft_not_square(t_map *map)
 {
 	size_t	i;
 	size_t	j;
+    t_map *temp;
 
 	i = 0;
 	j = 0;
-	while (map.map[i][j])
+    temp = map;
+	while (temp->map[i][j])
 	{
-		while (map.map[i][j])
+		while (temp->map[i][j])
 			j++;
 		i++;
 	}
-	if (i > j)
-		map.notsquare = 1;
-	else if (j > i)
-		map.notsquare = 1;
+	if (i > j || j > i)
+		temp->notsquare = 1;
 	else
-		map.notsquare = 0;
+		temp->notsquare = 0;
 }
 
-int	ft_verify_wall(t_map map)
+int	ft_verify_wall(t_map *map)
 {
     size_t i;
 	size_t 	j;
+    t_map *temp;
 
 	i = 0;
-	while (i < map.y)
+    temp = map;
+	while (i < temp->y)
 	{
 		j = 0;
-		while (j < map.x)
+		while (j < temp->x)
 		{
-			if ((i == 0 || i == map.x - 1
-				|| j == map.y - 1) && map.map[i][j] != 1)
+			if ((i == 0 || i == temp->x - 1
+				|| j == temp->y - 1) && temp->map[i][j] != 1)
 				return (0);
 			j++;
 		}

@@ -6,16 +6,14 @@ NAME        := so_long
 CC          := cc
 FLAGS       :=  -Werror -Wall -Wextra -g3 -fsanitize=address
 FRAMEWORKS  := -framework Cocoa -framework OpenGL -framework IOKit
-#LIBRARIES   := -L./libft/compiled -lft -lprintf -lgnl  -L./MLX42/build -lmlx42 -lglfw
-LIBRARIES   := ./libft/compiled/libft.a ./libft/compiled/libprintf.a ./libft/compiled/libgnl.a #-L./MLX42/build -lmlx42 -lglfw
+LIBRARY_DIRS := -L./libft/compiled -L./MLX42/build
+LIBRARIES   := -lft -lprintf -lgnl -lmlx42 -lglfw
+
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        := srcs/parsing/element.c \
-               srcs/parsing/map.c \
-               srcs/parsing/parsing.c \
-               main.c
+SRCS        := $(wildcard *.c srcs/*.c srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
 
 OBJS        := $(SRCS:.c=.o)
 
@@ -36,15 +34,14 @@ RM          := rm -f
 
 all:        libft libmlx ${NAME}
 
-${NAME}:    ${OBJS} ${LIBRARIES}
+${NAME}:    ${OBJS}
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} ${LIBRARIES} -o ${NAME} ${OBJS}
+			${CC} ${FLAGS} ${OBJS} ${LIBRARY_DIRS} ${LIBRARIES} -o ${NAME}
 			@echo "$(GREEN)$(NAME) created $(CLR_RMV)✔️"
 
-mac:		libft libmlx
-			${OBJS} ${LIBRARIES}
+mac:		libft libmlx ${OBJS}
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} ${FRAMEWORKS} ${LIBRARIES} -o ${NAME} ${OBJS}
+			${CC} ${FLAGS} ${FRAMEWORKS} ${OBJS} ${LIBRARY_DIRS} ${LIBRARIES} -o ${NAME}
 			@echo "$(GREEN)$(NAME) created $(CLR_RMV)✔️"
 
 libft:
@@ -67,4 +64,4 @@ fclean:     clean
 
 re:         fclean all
 
-.PHONY:     all clean fclean re libft libmlx bonus
+.PHONY :     all clean fclean re libft libmlx bonus
