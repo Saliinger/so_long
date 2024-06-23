@@ -43,16 +43,11 @@ typedef struct s_data
 {
     mlx_t  *mlx;
     mlx_image_t *wall;
-    mlx_image_t *floor;
+    mlx_image_t *background;
     mlx_image_t *player;
     mlx_image_t *exit;
     mlx_image_t *collectible;
 }           t_data;
-
-// define
-# define WIDTH 256
-# define HEIGHT 256
-# define WALL "../../assets/Tilesets/Water.png"
 
 // parsing
 void		ft_parsing(t_map *map, char **argv);

@@ -4,16 +4,16 @@
 
 NAME        := so_long
 CC          := cc
-FLAGS       :=  -Werror -Wall -Wextra -g3 -fsanitize=address
+FLAGS       := -Werror -Wall -Wextra -g3 -fsanitize=address
 FRAMEWORKS  := -framework Cocoa -framework OpenGL -framework IOKit
 LIBRARY_DIRS := -L./libft/compiled -L./MLX42/build
-LIBRARIES   := -lft -lprintf -lgnl -lmlx42 -lglfw
+LIBRARIES   := -lgnl -lmlx42 -lglfw -lprintf -lft
 
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        := $(wildcard *.c srcs/*.c  srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
+SRCS        := $(wildcard *.c srcs/*.c srcs/texture/*.c srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
 
 OBJS        := $(SRCS:.c=.o)
 
