@@ -42,13 +42,17 @@ typedef struct s_map
 typedef struct s_data
 {
     mlx_t  *mlx;
-    mlx_image_t *image;
+    mlx_image_t *wall;
+    mlx_image_t *floor;
+    mlx_image_t *player;
+    mlx_image_t *exit;
+    mlx_image_t *collectible;
 }           t_data;
 
 // define
 # define WIDTH 256
 # define HEIGHT 256
-# define BUFFER 42
+# define WALL "../../assets/Tilesets/Water.png"
 
 // parsing
 void		ft_parsing(t_map *map, char **argv);
@@ -67,5 +71,12 @@ void	ft_hook(void *param);
 
 // utils
 void ft_print(char **map);
+void ft_error(t_data *data);
+void clear_data(t_data *data);
+
+
+//image
+void init_map(t_map *map, t_data *data);
+void init_image(t_data *data);
 
 #endif
