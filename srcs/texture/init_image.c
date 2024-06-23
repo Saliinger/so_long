@@ -1,7 +1,6 @@
 #include "../../include/so_long.h"
 
-static mlx_image_t *load_img(t_data *data, char *path)
-{
+static mlx_image_t *load_img(t_data *data, char *path) {
     mlx_texture_t *texture;
     mlx_image_t *image;
 
@@ -15,8 +14,7 @@ static mlx_image_t *load_img(t_data *data, char *path)
     return image;
 }
 
-void init_image(t_data *data)
-{
+void init_image(t_data *data) {
     data->player = load_img(data, "./assets/character/character.png");
     data->wall = load_img(data, "./assets/map/wall.png");
     data->background = load_img(data, "./assets/map/background.png");
