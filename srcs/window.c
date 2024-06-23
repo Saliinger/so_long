@@ -23,7 +23,7 @@ int ft_window(t_map *map)
     data->mlx = mlx_init(WIDTH, HEIGHT, "Game", true);
     if (!data->mlx)
         ft_error(data);
-    init_map(map, data);
+    //init_map(map, data);
     //mlx_loop_hook(data->mlx, ft_hook, &data);
     mlx_loop(data->mlx);
     return (EXIT_SUCCESS);

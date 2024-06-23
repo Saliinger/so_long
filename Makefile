@@ -13,7 +13,7 @@ LIBRARIES   := -lft -lprintf -lgnl -lmlx42 -lglfw
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        := $(wildcard *.c srcs/*.c srcs/texture/*.c srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
+SRCS        := $(wildcard *.c srcs/*.c  srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
 
 OBJS        := $(SRCS:.c=.o)
 
