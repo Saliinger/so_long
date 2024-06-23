@@ -21,7 +21,6 @@ void	ft_verify_element(t_map *map)
 	i = 0;
 	j = 0;
     temp = map;
-    ft_print(temp->map);
 	while (temp->map[i] != NULL)
 	{
         j = 0;
