@@ -1,18 +1,23 @@
 #include "../../include/so_long.h"
 
 
-// Function to initialize and draw the background
-static void init_bg(t_map *map, t_data *data) {
-    int i = 0;
+static void init_player(t_map *map, t_data *data)
+{
+    int i;
     int j;
 
-    while (map->map[i] != NULL) {
+    i = 0;
+    while (map->map[i] != NULL)
+    {
         j = 0;
         while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
-            mlx_image_to_window(data->mlx, data->background, j * 64, i * 64);
+            if (map->map[i][j] == 'P') {
+                mlx_image_to_window(data->mlx, data->player, j * 64, i * 64);
+                break;
+            }
             j++;
         }
-        i++; // Increment i to avoid infinite loop
+            i++;
     }
 }
 
@@ -29,8 +34,6 @@ void init_map(t_map *map, t_data *data) {
         while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
             if (map->map[i][j] == '1')
                 mlx_image_to_window(data->mlx, data->wall, j * 64, i * 64);
-            else if (map->map[i][j] == 'P')
-                mlx_image_to_window(data->mlx, data->player, j * 64, i * 64);
             else if (map->map[i][j] == 'E')
                 mlx_image_to_window(data->mlx, data->exit, j * 64, i * 64);
             else if (map->map[i][j] == 'C')
@@ -39,4 +42,5 @@ void init_map(t_map *map, t_data *data) {
         }
         i++; // Increment i to avoid infinite loop
     }
+    init_player(map, data);
 }

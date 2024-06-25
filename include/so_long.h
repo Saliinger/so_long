@@ -37,6 +37,8 @@ typedef struct s_map
 	size_t 		y;
 	size_t 		x;
 	int		s;
+    int player_x;
+    int player_y;
 }			t_map;
 
 typedef struct s_data
@@ -47,6 +49,7 @@ typedef struct s_data
     mlx_image_t *player;
     mlx_image_t *exit;
     mlx_image_t *collectible;
+    t_map       *map;
 }           t_data;
 
 // parsing
@@ -62,7 +65,9 @@ size_t	open_fd(char **argv, t_map *map);
 int			ft_window(t_map *map);
 
 // mouvement
-void	ft_hook(void *param);
+void	ft_hook(mlx_key_data_t keydata, void *param);
+//void render_map(t_data *data);
+//bool collision(t_data *data);
 
 // utils
 void ft_print(char **map);
@@ -73,5 +78,6 @@ void clear_data(t_data *data);
 //image
 void init_map(t_map *map, t_data *data);
 void init_image(t_data *data);
+void init_bg(t_map *map, t_data *data);
 
 #endif
