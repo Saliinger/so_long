@@ -21,8 +21,8 @@ int ft_window(t_map *map)
     if (!data)
         ft_error(data);
     data->map = map;
-    height = (int)map->y * 64;
-    width = (int)map->x * 64;
+    height = map->y * 64;
+    width = map->x * 64;
     data->mlx = mlx_init(width, height, "so_long", true);
     if (!data->mlx)
         ft_error(data);

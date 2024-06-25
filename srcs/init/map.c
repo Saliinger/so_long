@@ -12,7 +12,7 @@ static int width(char *line)
 
 void	ft_map_chequer(t_map *map, char **argv)
 {
-	size_t	i;
+	int	i;
 	char	*line;
     t_map *temp;
 

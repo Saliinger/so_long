@@ -34,8 +34,8 @@ typedef struct s_map
 	int		w;
 	int		c;
 	int		notsquare;
-	size_t 		y;
-	size_t 		x;
+	int 		y;
+	int 		x;
 	int		s;
     int player_x;
     int player_y;
@@ -52,6 +52,13 @@ typedef struct s_data
     t_map       *map;
 }           t_data;
 
+// define
+# define UP 0
+# define DOWN 1
+# define LEFT 2
+# define RIGHT 3
+# define TILE_SIZE 64
+
 // parsing
 void		ft_parsing(t_map *map, char **argv);
 void		ft_not_square(t_map *map);
@@ -67,7 +74,7 @@ int			ft_window(t_map *map);
 // mouvement
 void	ft_hook(mlx_key_data_t keydata, void *param);
 //void render_map(t_data *data);
-//bool collision(t_data *data);
+bool collision(t_data *data, int x, int y);
 
 // utils
 void ft_print(char **map);

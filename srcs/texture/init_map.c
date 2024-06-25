@@ -13,6 +13,8 @@ static void init_player(t_map *map, t_data *data)
         while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
             if (map->map[i][j] == 'P') {
                 mlx_image_to_window(data->mlx, data->player, j * 64, i * 64);
+                map->player_x = (int)i;
+                map->player_y = (int)j;
                 break;
             }
             j++;
@@ -29,9 +31,9 @@ void init_map(t_map *map, t_data *data) {
     init_image(data); // Initialize images
     init_bg(map, data); // Initialize and draw background
 
-    while (map->map[i] != NULL) {
+    while (map->map[i]) {
         j = 0;
-        while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
+        while (map->map[i][j] && map->map[i][j] != '\n') {
             if (map->map[i][j] == '1')
                 mlx_image_to_window(data->mlx, data->wall, j * 64, i * 64);
             else if (map->map[i][j] == 'E')

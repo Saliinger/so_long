@@ -14,8 +14,8 @@
 
 void	ft_verify_element(t_map *map)
 {
-	size_t	i;
-	size_t	j;
+	int	i;
+	int	j;
     t_map *temp;
 
 	i = 0;
@@ -23,16 +23,12 @@ void	ft_verify_element(t_map *map)
 	while (temp->map[i] != NULL)
 	{
         j = 0;
-		while (temp->map[i][j] != '\0')
+		while (temp->map[i][j] != '\n' && temp->map[i][j] != '\0')
 		{
 			if (temp->map[i][j] == 'e')
 				temp->e += 1;
 			if (temp->map[i][j] == 'p')
-            {
                 temp->p += 1;
-                temp->player_x = (int)i;
-                temp->player_y = (int)j;
-            }
 			if (temp->map[i][j] == 'c')
 				temp->c += 1;
 			if (temp->map[i][j] == '0')

@@ -19,7 +19,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (ft_printf("no map found"), 0);
     map = malloc(sizeof(t_map));
-    if(!map) { return (0); }
+    if (!map)
+        return (0);
 	map->fd = open(argv[1], O_RDONLY);
 	map->map = 0;
 	map->e = 0;
@@ -27,8 +28,8 @@ int	main(int argc, char **argv)
 	map->w = 0;
 	map->c = 0;
 	map->notsquare = 0;
-	map->y = 0;
-	map->x = 0;
+	map->y = open_fd(argv, map);
+	map->x = ft_strlen(argv[1]);
 	map->s = 0;
 	ft_parsing(map, argv);
 	ft_window(map);
