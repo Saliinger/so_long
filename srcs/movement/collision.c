@@ -1,7 +1,6 @@
 #include "../../include/so_long.h"
 
 // Verify wall && collectible
-// Verify wall && collectible
 bool collision(t_data *data, int new_x, int new_y)
 {
     int i;
@@ -12,7 +11,7 @@ bool collision(t_data *data, int new_x, int new_y)
 
     // Check for wall collision
     i = 0;
-    while (i < (int)data->wall->count && data->wall->instances[i].enabled)
+    while (i <= (int)data->wall->count)
     {
         if (data->wall->instances[i].x == new_x && data->wall->instances[i].y == new_y)
             return false;
@@ -21,7 +20,7 @@ bool collision(t_data *data, int new_x, int new_y)
 
     // Check for collectible collision and update count
     i = 0;
-    while (i < (int)data->collectible->count)
+    while (i <= (int)data->collectible->count)
     {
         if (data->collectible->instances[i].x == new_x && data->collectible->instances[i].y == new_y && data->collectible->instances[i].enabled)
         {
@@ -31,6 +30,11 @@ bool collision(t_data *data, int new_x, int new_y)
         }
         i++;
     }
-
+    if (new_x == data->exit->instances[0].x && new_y == data->exit->instances[0].y && data->collectible->count == 0)
+    {
+        ft_printf("you win");
+        clear_data(data);
+        return (EXIT_SUCCESS);
+    }
     return true;
 }
