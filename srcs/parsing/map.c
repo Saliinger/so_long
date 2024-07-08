@@ -35,7 +35,7 @@ void	ft_not_square(t_map *map)
 
 int	ft_verify_wall(t_map *map)
 {
-    int i;
+    int     i;
 	int 	j;
     t_map *temp;
 
