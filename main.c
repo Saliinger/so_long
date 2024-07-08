@@ -32,6 +32,8 @@ int	main(int argc, char **argv)
 	map->x = ft_strlen(argv[1]);
 	map->s = 0;
 	ft_parsing(map, argv);
-	ft_window(map);
-	return (0);
+//    if (ft_valid(map) != 1)
+//        return (EXIT_FAILURE);
+    ft_window(map);
+    return (0);
 }
