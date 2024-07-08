@@ -5,19 +5,15 @@ bool collision(t_data *data, int new_x, int new_y)
 {
     static int collected = 0;
     int i;
+    int x;
+    int y;
 
-    // Check for boundaries
-    if (new_x < 0 || new_x >= data->map->x * TILE_SIZE || new_y < 0 || new_y >= data->map->y * TILE_SIZE)
-        return false;
+    x = new_x / 64;
+    y = new_y / 64;
 
     // Check for wall collision
-    i = 0;
-    while (i <= (int)data->wall->count)
-    {
-        if (data->wall->instances[i].x == new_x && data->wall->instances[i].y == new_y)
-            return false;
-        i++;
-    }
+    if (data->map->map[y][x] == '1')
+        return false;
 
     // Check for collectible collision and update count
     i = 0;
@@ -31,6 +27,7 @@ bool collision(t_data *data, int new_x, int new_y)
         }
         i++;
     }
+
     if (new_x == data->exit->instances[0].x && new_y == data->exit->instances[0].y && (int)data->collectible->count == collected)
     {
         ft_printf("you win");

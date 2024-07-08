@@ -58,6 +58,7 @@ typedef struct s_data
 # define LEFT 2
 # define RIGHT 3
 # define TILE_SIZE 64
+# define TILE_MOVE 32
 
 // parsing
 void		ft_parsing(t_map *map, char **argv);

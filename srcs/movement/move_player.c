@@ -1,10 +1,10 @@
 #include "../../include/so_long.h"
 
-static void align_to_grid(int *x, int *y)
-{
-    *x = (*x / TILE_SIZE) * TILE_SIZE;
-    *y = (*y / TILE_SIZE) * TILE_SIZE;
-}
+//static void align_to_grid(int *x, int *y)
+//{
+//    *x = (*x / TILE_MOVE) * TILE_MOVE;
+//    *y = (*y / TILE_MOVE) * TILE_MOVE;
+//}
 
 static void key_handler(mlx_key_data_t keydata, t_data *data)
 {
@@ -17,22 +17,22 @@ static void key_handler(mlx_key_data_t keydata, t_data *data)
         mlx_close_window(data->mlx);
     if (keydata.key == MLX_KEY_W)
     {
-        new_y -= TILE_SIZE;
+        new_y -= TILE_MOVE;
         mouvement++;
     }
     if (keydata.key == MLX_KEY_S)
     {
-        new_y += TILE_SIZE;
+        new_y += TILE_MOVE;
         mouvement++;
     }
     if (keydata.key == MLX_KEY_A)
     {
-        new_x -= TILE_SIZE;
+        new_x -= TILE_MOVE;
         mouvement++;
     }
     if (keydata.key == MLX_KEY_D)
     {
-        new_x += TILE_SIZE;
+        new_x += TILE_MOVE;
         mouvement++;
     }
 
@@ -47,7 +47,7 @@ static void key_handler(mlx_key_data_t keydata, t_data *data)
     }
 
     // Align the player to the grid to avoid misalignment
-    align_to_grid(&data->player->instances[0].x, &data->player->instances[0].y);
+    //align_to_grid(&data->player->instances[0].x, &data->player->instances[0].y);
 
     if (current != mouvement)
     {
