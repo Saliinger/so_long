@@ -14,7 +14,7 @@ static void key_handler(mlx_key_data_t keydata, t_data *data)
     int new_y = data->player->instances[0].y;
 
     if (keydata.key == MLX_KEY_ESCAPE)
-        mlx_close_window(data->mlx);
+        clear_data(data);
     if (keydata.key == MLX_KEY_W)
     {
         new_y -= TILE_MOVE;

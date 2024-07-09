@@ -5,14 +5,9 @@ bool collision(t_data *data, int new_x, int new_y)
 {
     static int collected = 0;
     int i;
-    int x;
-    int y;
-
-    x = new_x / 64;
-    y = new_y / 64;
 
     // Check for wall collision
-    if (data->map->map[y][x] == '1')
+    if (data->map->map[new_y / 64][new_x / 64] == '1')
         return false;
 
     // Check for collectible collision and update count
@@ -32,7 +27,6 @@ bool collision(t_data *data, int new_x, int new_y)
     {
         ft_printf("you win");
         clear_data(data);
-        return (EXIT_SUCCESS);
     }
     return true;
 }

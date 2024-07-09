@@ -10,7 +10,7 @@ static mlx_image_t *load_img(t_data *data, char *path) {
     image = mlx_texture_to_image(data->mlx, texture);
     if (!image)
         ft_error(data);
-    mlx_resize_image(image, 64, 64);
+    mlx_resize_image(image, TILE_SIZE, TILE_SIZE);
     mlx_delete_texture(texture);
     return (image);
 }

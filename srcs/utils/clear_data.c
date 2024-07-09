@@ -20,4 +20,5 @@ void clear_data(t_data *data)
     free_map(data);
     mlx_terminate(data->mlx);
     free(data);
+    exit(EXIT_SUCCESS);
 }

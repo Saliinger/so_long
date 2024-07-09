@@ -8,7 +8,7 @@ void init_bg(t_map *map, t_data *data)
     while (map->map[i] != NULL) {
         j = 0;
         while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
-            mlx_image_to_window(data->mlx, data->background, j * 64, i * 64);
+            mlx_image_to_window(data->mlx, data->background, j * TILE_SIZE, i * TILE_SIZE);
             j++;
         }
         i++; // Increment i to avoid infinite loop
