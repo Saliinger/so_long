@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_background.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/11 13:55:13 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/11 14:04:59 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/so_long.h"
 
 void	init_bg(t_map *map, t_data *data)
@@ -15,6 +27,6 @@ void	init_bg(t_map *map, t_data *data)
 				* TILE_SIZE);
 			j++;
 		}
-		i++; // Increment i to avoid infinite loop
+		i++;
 	}
 }

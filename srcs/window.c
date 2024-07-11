@@ -6,9 +6,11 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:11:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:52:07 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/11 13:57:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../include/so_long.h"
 
 int	ft_window(t_map *map)
 {

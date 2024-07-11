@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_map.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/11 13:55:27 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/11 14:00:38 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/so_long.h"
 
 static void	init_player(t_map *map, t_data *data)
@@ -25,15 +37,14 @@ static void	init_player(t_map *map, t_data *data)
 	}
 }
 
-// Function to initialize and draw the map elements
 void	init_map(t_map *map, t_data *data)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	init_image(data);   // Initialize images
-	init_bg(map, data); // Initialize and draw background
+	init_image(data);
+	init_bg(map, data);
 	while (map->map[i])
 	{
 		j = 0;
@@ -50,7 +61,7 @@ void	init_map(t_map *map, t_data *data)
 					i * TILE_SIZE);
 			j++;
 		}
-		i++; // Increment i to avoid infinite loop
+		i++;
 	}
 	init_player(map, data);
 }

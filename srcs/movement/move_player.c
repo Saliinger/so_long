@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_player.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/11 13:58:04 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/11 13:59:19 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/so_long.h"
 
 static void	align_to_grid(int *x, int *y)
@@ -37,7 +49,6 @@ static void	key_handler(mlx_key_data_t keydata, t_data *data)
 		new_x += TILE_MOVE;
 		mouvement++;
 	}
-	// Align the player to the grid to avoid misalignment
 	align_to_grid(&new_x, &new_y);
 	if (collision(data, new_x, new_y))
 	{
@@ -45,9 +56,7 @@ static void	key_handler(mlx_key_data_t keydata, t_data *data)
 		data->player->instances[0].y = new_y;
 	}
 	else
-	{
-		mouvement--; // Revert the movement counter if the move was not valid
-	}
+		mouvement--;
 	if (current != mouvement)
 	{
 		ft_printf("%d\n", mouvement);
@@ -57,7 +66,7 @@ static void	key_handler(mlx_key_data_t keydata, t_data *data)
 
 void	ft_hook(mlx_key_data_t keydata, void *param)
 {
-	t_data *data;
+	t_data	*data;
 
 	data = (t_data *)param;
 	key_handler(keydata, data);
