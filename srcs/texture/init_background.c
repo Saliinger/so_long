@@ -1,16 +1,20 @@
 #include "../../include/so_long.h"
 
-void init_bg(t_map *map, t_data *data)
+void	init_bg(t_map *map, t_data *data)
 {
-    int i = 0;
-    int j;
+	int	i;
+	int	j;
 
-    while (map->map[i] != NULL) {
-        j = 0;
-        while (map->map[i][j] != '\0' && map->map[i][j] != '\n') {
-            mlx_image_to_window(data->mlx, data->background, j * TILE_SIZE, i * TILE_SIZE);
-            j++;
-        }
-        i++; // Increment i to avoid infinite loop
-    }
+	i = 0;
+	while (map->map[i] != NULL)
+	{
+		j = 0;
+		while (map->map[i][j] != '\0' && map->map[i][j] != '\n')
+		{
+			mlx_image_to_window(data->mlx, data->background, j * TILE_SIZE, i
+				* TILE_SIZE);
+			j++;
+		}
+		i++; // Increment i to avoid infinite loop
+	}
 }

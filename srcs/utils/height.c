@@ -4,9 +4,9 @@ size_t	open_fd(char **argv, t_map *map)
 {
 	size_t	i;
 	char	*line;
-    t_map *temp;
+	t_map	*temp;
 
-    temp = map;
+	temp = map;
 	temp->fd = open(argv[1], O_RDONLY);
 	i = 0;
 	line = get_next_line(temp->fd);
