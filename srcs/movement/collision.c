@@ -6,8 +6,10 @@ bool collision(t_data *data, int new_x, int new_y)
     static int collected = 0;
     int i;
 
+    ft_printf("x: %d, y: %d\n", new_x / TILE_MOVE, new_y / TILE_MOVE);
+
     // Check for wall collision
-    if (data->map->map[new_y / 64][new_x / 64] == '1')
+    if (data->map->map[new_y / TILE_MOVE][new_x / TILE_MOVE] == '1')
         return false;
 
     // Check for collectible collision and update count

@@ -1,10 +1,10 @@
 #include "../../include/so_long.h"
 
-//static void align_to_grid(int *x, int *y)
-//{
-//    *x = (*x / TILE_MOVE) * TILE_MOVE;
-//    *y = (*y / TILE_MOVE) * TILE_MOVE;
-//}
+static void align_to_grid(int *x, int *y)
+{
+    *x = (*x / TILE_MOVE) * TILE_MOVE;
+    *y = (*y / TILE_MOVE) * TILE_MOVE;
+}
 
 static void key_handler(mlx_key_data_t keydata, t_data *data)
 {
@@ -13,28 +13,31 @@ static void key_handler(mlx_key_data_t keydata, t_data *data)
     int new_x = data->player->instances[0].x;
     int new_y = data->player->instances[0].y;
 
-    if (keydata.key == MLX_KEY_ESCAPE)
+    if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
         clear_data(data);
-    if (keydata.key == MLX_KEY_W)
+    if (keydata.key == MLX_KEY_W && keydata.action == MLX_PRESS)
     {
         new_y -= TILE_MOVE;
         mouvement++;
     }
-    if (keydata.key == MLX_KEY_S)
+    if (keydata.key == MLX_KEY_S && keydata.action == MLX_PRESS)
     {
         new_y += TILE_MOVE;
         mouvement++;
     }
-    if (keydata.key == MLX_KEY_A)
+    if (keydata.key == MLX_KEY_A && keydata.action == MLX_PRESS)
     {
         new_x -= TILE_MOVE;
         mouvement++;
     }
-    if (keydata.key == MLX_KEY_D)
+    if (keydata.key == MLX_KEY_D && keydata.action == MLX_PRESS)
     {
         new_x += TILE_MOVE;
         mouvement++;
     }
+
+    // Align the player to the grid to avoid misalignment
+    align_to_grid(&new_x, &new_y);
 
     if (collision(data, new_x, new_y))
     {
@@ -45,9 +48,6 @@ static void key_handler(mlx_key_data_t keydata, t_data *data)
     {
         mouvement--;  // Revert the movement counter if the move was not valid
     }
-
-    // Align the player to the grid to avoid misalignment
-    //align_to_grid(&data->player->instances[0].x, &data->player->instances[0].y);
 
     if (current != mouvement)
     {
