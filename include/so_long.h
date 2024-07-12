@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:54:16 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/12 22:50:24 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,10 @@ typedef struct s_data
 	mlx_image_t	*exit;
 	mlx_image_t	*collectible;
 	t_map		*map;
+	int			mouvement;
+	int			current_move;
+	int			new_x;
+	int			new_y;
 }				t_data;
 
 // define
@@ -72,9 +76,8 @@ size_t			open_fd(char **argv, t_map *map);
 // window
 int				ft_window(t_map *map);
 
-// mouvement
+// movement
 void			ft_hook(mlx_key_data_t keydata, void *param);
-// void render_map(t_data *data);
 bool			collision(t_data *data, int x, int y);
 
 // utils

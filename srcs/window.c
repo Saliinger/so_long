@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:11:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:57:23 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/12 22:50:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ int	ft_window(t_map *map)
 	data->map = map;
 	height = map->y * TILE_SIZE;
 	width = map->x * TILE_SIZE;
+	data->current_move = 0;
+	data->mouvement = 0;
 	data->mlx = mlx_init(width, height, "so_long", true);
 	if (!data->mlx)
 		ft_error(data);
