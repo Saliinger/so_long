@@ -8,12 +8,32 @@ FLAGS       := -Werror -Wall -Wextra -g3 -fsanitize=address
 FRAMEWORKS  := -framework Cocoa -framework OpenGL -framework IOKit
 LIBRARY_DIRS := -L./libft/compiled -L./MLX42/build -Iinclude
 LIBRARIES   := -lgnl -lmlx42 -lglfw -lprintf -lft
+INIT_DIR	:= ./srcs/init
+MOVE_DIR	:= ./srcs/movement
+PARSE_DIR	:= ./srcs/parsing
+TEXT_DIR	:= ./srcs/texture
+UTILS_DIR	:= ./srcs/utils
 
 ################################################################################
 #                                 PROGRAM'S SRCS                               #
 ################################################################################
 
-SRCS        := $(wildcard *.c srcs/*.c srcs/texture/*.c srcs/parsing/*.c srcs/init/*.c srcs/utils/*.c srcs/element/*.c srcs/movement/*.c)
+SRCS        :=	main.c\
+				./srcs/window.c\
+				${INIT_DIR}/map.c\
+				${MOVE_DIR}/collision.c\
+				${MOVE_DIR}/move_player.c\
+				${PARSE_DIR}/element.c\
+				${PARSE_DIR}/ft_valid.c\
+				${PARSE_DIR}/parsing.c\
+				${PARSE_DIR}/map.c\
+				${TEXT_DIR}/init_background.c\
+				${TEXT_DIR}/init_image.c\
+				${TEXT_DIR}/init_map.c\
+				${UTILS_DIR}/clear_data.c\
+				${UTILS_DIR}/error_handler.c\
+				${UTILS_DIR}/height.c\
+				${UTILS_DIR}/utils.c\
 
 OBJS        := $(SRCS:.c=.o)
 
