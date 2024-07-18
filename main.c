@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:52:09 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/18 14:25:47 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (ft_printf("no map found"), 0);
+	if (is_ber(argv[1]) == false)
+		return (ft_printf("map is not .ber\n"), 0);
 	map = malloc(sizeof(t_map));
 	if (!map)
 		return (0);
@@ -32,8 +34,6 @@ int	main(int argc, char **argv)
 	map->x = ft_strlen(argv[1]);
 	map->s = 0;
 	ft_parsing(map, argv);
-	//    if (ft_valid(map) != 1)
-	//        return (EXIT_FAILURE);
 	ft_window(map);
 	return (0);
 }

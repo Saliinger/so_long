@@ -25,6 +25,7 @@ SRCS        :=	main.c\
 				${MOVE_DIR}/move_player.c\
 				${PARSE_DIR}/element.c\
 				${PARSE_DIR}/ft_valid.c\
+				${PARSE_DIR}/is_ber.c\
 				${PARSE_DIR}/parsing.c\
 				${PARSE_DIR}/map.c\
 				${TEXT_DIR}/init_background.c\

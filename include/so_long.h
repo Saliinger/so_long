@@ -72,6 +72,7 @@ int				ft_valid(t_map *map);
 void			ft_map_chequer(t_map *map, char **argv);
 void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
+bool            is_ber(char *str);
 
 // window
 int				ft_window(t_map *map);
