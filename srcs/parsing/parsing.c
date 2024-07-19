@@ -31,6 +31,7 @@ void	ft_parsing(t_map *map, char **argv)
 {
 	ft_map_chequer(map, argv);
 	map->w = ft_verify_wall(map);
+    ft_printf("%d", map->w);
 	ft_verify_element(map);
 	ft_not_square(map);
     if (ft_valid(map) == 0)

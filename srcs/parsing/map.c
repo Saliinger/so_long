@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:53:47 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:53:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/19 12:49:28 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,21 @@ void	ft_not_square(t_map *map)
 
 int	ft_verify_wall(t_map *map)
 {
-	int		i;
-	int		j;
-	t_map	*temp;
+	int	i;
+	int	j;
 
-	i = 0;
-	temp = map;
-	while (i < temp->y)
+	j = 0;
+	while (j < map->x)
 	{
-		j = 0;
-		while (j < temp->x)
-		{
-			if ((i == 0 || i == temp->x - 1 || j == temp->y - 1)
-				&& temp->map[i][j] != 1)
-				return (0);
-			j++;
-		}
+		if (map->map[0][j] != '1' || map->map[map->y - 1][j] != '1')
+			return (0);
+		j++;
+	}
+	i = 0;
+	while (i < map->y)
+	{
+		if (map->map[i][0] != '1' || map->map[i][map->x - 1] != '1')
+			return (0);
 		i++;
 	}
 	return (1);
