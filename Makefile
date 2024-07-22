@@ -4,7 +4,7 @@
 
 NAME        := so_long
 CC          := cc
-FLAGS       := -Werror -Wall -Wextra -g3 -fsanitize=address
+FLAGS       := -Werror -Wall -Wextra -g3 #-fsanitize=address
 FRAMEWORKS  := -framework Cocoa -framework OpenGL -framework IOKit
 LIBRARY_DIRS := -L./libft/compiled -L./MLX42/build -Iinclude
 LIBRARIES   := -lgnl -lmlx42 -lglfw -lprintf -lft

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/12 22:50:24 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:04:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int				ft_valid(t_map *map);
 void			ft_map_chequer(t_map *map, char **argv);
 void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
-bool            is_ber(char *str);
+bool			is_ber(char *str);
 
 // window
 int				ft_window(t_map *map);
