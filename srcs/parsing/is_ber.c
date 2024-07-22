@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/18 14:26:16 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/22 10:28:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:08:07 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ bool	is_ber(char *str)
 {
 	size_t	i;
 	size_t	j;
-	char	ber[] = ".ber";
+	char	*ber;
 
 	i = 0;
+	ber = ".ber";
 	while (str[i] != '\0')
 		i++;
 	i -= 4;
