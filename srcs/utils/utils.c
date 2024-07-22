@@ -24,3 +24,4 @@ void	ft_print(char **map)
 	}
 	ft_printf("\n\n");
 }
+

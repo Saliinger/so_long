@@ -18,5 +18,5 @@ int	ft_valid(t_map *map)
 		&& map->notsquare == 1 && map->s >= 1)
 		return (1);
 	else
-		return (0);
+		return (ft_printf("map is not valid\n"), 0);
 }
