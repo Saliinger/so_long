@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/18 14:25:47 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/22 11:28:48 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,10 @@ int	main(int argc, char **argv)
 	if (!map)
 		return (0);
 	map->fd = open(argv[1], O_RDONLY);
-	map->map = 0;
-	map->e = 0;
-	map->p = 0;
-	map->w = 0;
-	map->c = 0;
-	map->notsquare = 0;
+	if (map->fd == -1)
+		return (ft_printf("map doesn't exist\n", 0));
 	map->y = open_fd(argv, map);
 	map->x = ft_strlen(argv[1]);
-	map->s = 0;
 	ft_parsing(map, argv);
 	ft_window(map);
 	return (0);

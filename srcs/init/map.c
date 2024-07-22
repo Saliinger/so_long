@@ -12,6 +12,17 @@
 
 #include "../../include/so_long.h"
 
+static void init(t_map *map)
+{
+    map->map = 0;
+	map->e = 0;
+	map->p = 0;
+	map->w = 0;
+	map->c = 0;
+	map->notsquare = 0;
+	map->s = 0;
+}
+
 static int	width(char *line)
 {
 	int	i;
@@ -29,6 +40,7 @@ void	ft_map_chequer(t_map *map, char **argv)
 	t_map	*temp;
 
 	i = 0;
+    init(map);
 	temp = map;
 	temp->y = open_fd(argv, map);
 	temp->map = (char **)malloc(sizeof(char *) * (temp->y + 1));
