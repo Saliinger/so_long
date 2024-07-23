@@ -25,13 +25,6 @@ static void	free_temp(char **temp)
 	free(temp);
 }
 
-static void	to_large(t_map *map)
-{
-	ft_printf("the map is too big\nx : %d > 60 || y : %d > 32\n", map->x,
-		map->y);
-	free_map(map);
-}
-
 static void	data_init(t_map *map, char **argv)
 {
 	ft_map_chequer(map, argv);
@@ -46,18 +39,10 @@ void	ft_parsing(t_map *map, char **argv)
 
 	data_init(map, argv);
 	temp = map_c(map);
-	map->flood_fill_x = map->player_x;
-	map->flood_fill_y = map->player_y;
 	flood_fill(map, temp);
 	free_temp(temp);
-	ft_printf("1\n");
 	if (map->x > 60)
 		to_large(map);
-	ft_printf("1\n");
 	if (ft_valid(map) == 0)
 		free_map(map);
-	ft_printf("c+e %d\n cf %d\n", map->c + map->e, map->flood_fill_collectible);
-	if (map->c + map->e != map->flood_fill_collectible)
-		free_map(map);
-	ft_printf("1\n");
 }
