@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:15:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 17:19:49 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct s_map
 	int			s;
 	int			player_x;
 	int			player_y;
-    int         flood_fill_collectible;
-    int         flood_fill_x;
-    int         flood_fill_y;
+	int			flood_fill_collectible;
+	int			flood_fill_x;
+	int			flood_fill_y;
 }				t_map;
 
 typedef struct s_data
@@ -66,7 +66,7 @@ typedef struct s_data
 # define RIGHT 3
 # define TILE_SIZE 64
 # define TILE_MOVE 64
-# define malloc(x) NULL
+//# define malloc(x) NULL
 
 // parsing
 void			ft_parsing(t_map *map, char **argv);
@@ -77,7 +77,7 @@ void			ft_map_chequer(t_map *map, char **argv);
 void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
 bool			is_ber(char *str);
-void flood_fill(t_map *map, char **temp);
+void			flood_fill(t_map *map, char **temp);
 
 // window
 int				ft_window(t_map *map);
@@ -90,8 +90,8 @@ bool			collision(t_data *data, int x, int y);
 void			ft_print(char **map);
 void			ft_error(t_data *data);
 void			clear_data(t_data *data);
-void	free_map(t_map *map);
-char **map_c(t_map *map);
+void			free_map(t_map *map);
+char			**map_c(t_map *map);
 
 // image
 void			init_map(t_map *map, t_data *data);

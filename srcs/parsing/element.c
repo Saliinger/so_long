@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:49:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:51:12 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 17:23:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ void	ft_verify_element(t_map *map)
 			if (temp->map[i][j] == 'E')
 				temp->e += 1;
 			if (temp->map[i][j] == 'P')
-            {
-                temp->flood_fill_x = i;
-                temp->flood_fill_y = j;
-                temp->p += 1;
-            }
+			{
+				temp->flood_fill_x = i;
+				temp->flood_fill_y = j;
+				temp->p += 1;
+			}
 			if (temp->map[i][j] == 'C')
 				temp->c += 1;
 			if (temp->map[i][j] == '0')

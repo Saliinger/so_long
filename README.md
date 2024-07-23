@@ -40,3 +40,25 @@ grep -C 10 malloc srcs/*.c
 -v #regarder, c'est utile aussi 
 
 
+# si un C enmur'e -> pas de message d'erreur
+#(flood_fill)
+
+
+# WTF ? =>
+111111
+100001
+1PC0E1
+100001
+1000 1
+100 C1
+111111 => parse la mapp ??? 
+
+111111
+100001
+1PC0E1
+1@!C01
+100C01
+100001
+111111 =>devrai pas passer non plus
+
+verification parsing element autre que 10PCE
