@@ -76,7 +76,7 @@ void			ft_map_chequer(t_map *map, char **argv);
 void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
 bool			is_ber(char *str);
-void flood_fill(t_map *map);
+void flood_fill(t_map *map, char **temp);
 
 // window
 int				ft_window(t_map *map);
@@ -90,6 +90,7 @@ void			ft_print(char **map);
 void			ft_error(t_data *data);
 void			clear_data(t_data *data);
 void	free_map(t_map *map);
+char **map_c(t_map *map);
 
 // image
 void			init_map(t_map *map, t_data *data);

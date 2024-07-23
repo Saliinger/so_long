@@ -36,6 +36,7 @@ SRCS        :=	main.c\
 				${UTILS_DIR}/error_handler.c\
 				${UTILS_DIR}/height.c\
 				${UTILS_DIR}/utils.c\
+				${UTILS_DIR}/copy_tmap.c
 
 OBJS        := $(SRCS:.c=.o)
 

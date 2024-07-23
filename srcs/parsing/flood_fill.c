@@ -1,31 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/23 17:02:20 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/23 17:12:15 by anoukan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/so_long.h"
 
-void flood_fill(t_map *map)
+static void	extend(t_map *map, char **temp)
 {
-    int temp_x;
-    int temp_y;
+	int	temp_x;
+	int	temp_y;
 
-    if (map->map[map->flood_fill_x][map->flood_fill_y] && map->map[map->flood_fill_x][map->flood_fill_y] != 'F' && map->map[map->flood_fill_x][map->flood_fill_y] != '1')
-    {
-        if (map->map[map->flood_fill_x][map->flood_fill_y] == 'C' || map->map[map->flood_fill_x][map->flood_fill_y] == 'E')
-            map->flood_fill_collectible +=1;
-        if (map->map[map->flood_fill_x][map->flood_fill_y] != '1' && map->map[map->flood_fill_x][map->flood_fill_y] != '\0' && map->map[map->flood_fill_x][map->flood_fill_y] != '\n')
-            map->map[map->flood_fill_x][map->flood_fill_y] = 'F';
-    }
-    else
-        return;
-    temp_x = map->flood_fill_x;
-    temp_y = map->flood_fill_y;
-    map->flood_fill_x = temp_x - 1;
-    flood_fill(map);
-    map->flood_fill_x = temp_x;
-    map->flood_fill_x = temp_x + 1;
-    flood_fill(map);
-    map->flood_fill_x = temp_x;
-    map->flood_fill_y = temp_y - 1;
-    flood_fill(map);
-    map->flood_fill_y = temp_y;
-    map->flood_fill_y = temp_y + 1;
-    flood_fill(map);
-    map->flood_fill_y = temp_y;
+	temp_x = map->flood_fill_x;
+	temp_y = map->flood_fill_y;
+	map->flood_fill_x = temp_x - 1;
+	flood_fill(map, temp);
+	map->flood_fill_x = temp_x;
+	map->flood_fill_x = temp_x + 1;
+	flood_fill(map, temp);
+	map->flood_fill_x = temp_x;
+	map->flood_fill_y = temp_y - 1;
+	flood_fill(map, temp);
+	map->flood_fill_y = temp_y;
+	map->flood_fill_y = temp_y + 1;
+	flood_fill(map, temp);
+	map->flood_fill_y = temp_y;
+}
+
+void	flood_fill(t_map *map, char **temp)
+{
+	if (temp[map->flood_fill_x][map->flood_fill_y]
+		&& temp[map->flood_fill_x][map->flood_fill_y] != 'F'
+		&& temp[map->flood_fill_x][map->flood_fill_y] != '1')
+	{
+		if (map->map[map->flood_fill_x][map->flood_fill_y] == 'C'
+			|| map->map[map->flood_fill_x][map->flood_fill_y] == 'E')
+			map->flood_fill_collectible += 1;
+		if (temp[map->flood_fill_x][map->flood_fill_y] != '1'
+			&& temp[map->flood_fill_x][map->flood_fill_y] != '\0'
+			&& temp[map->flood_fill_x][map->flood_fill_y] != '\n')
+			temp[map->flood_fill_x][map->flood_fill_y] = 'F';
+	}
+	else
+		return ;
+	extend(map, temp);
 }

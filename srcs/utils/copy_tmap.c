@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   copy_tmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 13:55:44 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:55:45 by anoukan          ###   ########.fr       */
+/*   Created: 2024/07/23 17:01:04 by anoukan           #+#    #+#             */
+/*   Updated: 2024/07/23 17:01:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-void	ft_print(char **map)
+char	**map_c(t_map *map)
 {
-	int	i;
+	char	**temp;
+	int		i;
 
+	temp = (char **)malloc(sizeof(char *) * (map->y + 1));
+	if (!temp)
+		free_map(map);
 	i = 0;
-	while (map[i])
+	while (map->map[i])
 	{
-		ft_printf("%s", map[i]);
+		temp[i] = ft_strdup(map->map[i]);
+		if (!temp[i])
+			free_map(map);
 		i++;
 	}
-	ft_printf("\n\n");
-}
-
- void	free_map(t_map *map)
-{
-    int	i;
-
-    i = 0;
-    while (map->map[i])
-    {
-        free(map->map[i]);
-        i++;
-    }
-    free(map->map);
-    free(map);
-    exit(EXIT_FAILURE);
+	temp[i] = NULL;
+	return (temp);
 }

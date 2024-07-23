@@ -35,4 +35,8 @@ flood fill
 haut bas gauche droite + check nbr C + E
 
 
+grep -C 10 malloc srcs/*.c
+
+-v #regarder, c'est utile aussi 
+
 
