@@ -24,6 +24,10 @@ cc -LLibFt/compiled main.c ./srcs/parsing/element.c ./srcs/parsing/map.c ./srcs/
 
 # Probleme
 
-  map vide
+X  map vide
 X map inexistente
-  display pb parsing
+X  display pb parsing
+
+   map max size x 60 block
+
+
