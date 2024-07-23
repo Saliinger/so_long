@@ -12,7 +12,7 @@
 
 #include "../../include/so_long.h"
 
-static void	free_map(t_data *data)
+static void	clear_map(t_data *data)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static void	free_map(t_data *data)
 
 void	clear_data(t_data *data)
 {
-	free_map(data);
+	clear_map(data);
 	mlx_terminate(data->mlx);
 	free(data);
 	exit(EXIT_SUCCESS);

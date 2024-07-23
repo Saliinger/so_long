@@ -23,6 +23,8 @@ static void	to_large(t_map *map)
 
 void	ft_parsing(t_map *map, char **argv)
 {
+    t_map *temp;
+
 	ft_map_chequer(map, argv);
 	if (map->x > 60)
 		to_large(map);
@@ -31,5 +33,8 @@ void	ft_parsing(t_map *map, char **argv)
 	ft_not_square(map);
 	if (ft_valid(map) == 0)
 		free_map(map);
-    flood_fill(map);
+    temp = map;
+    flood_fill(temp);
+    if(map->c + map->e != map->flood_fill_collectible)
+        free_map(map);
 }
