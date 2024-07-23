@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/22 11:04:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 17:15:22 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_data
 # define RIGHT 3
 # define TILE_SIZE 64
 # define TILE_MOVE 64
+# define malloc(x) NULL
 
 // parsing
 void			ft_parsing(t_map *map, char **argv);
