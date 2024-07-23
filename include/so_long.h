@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:19:49 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 18:00:54 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ typedef struct s_map
 	int			flood_fill_collectible;
 	int			flood_fill_x;
 	int			flood_fill_y;
+	int			unexpected;
 }				t_map;
 
 typedef struct s_data

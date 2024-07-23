@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:02:20 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:12:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 18:08:02 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-static void	extend(t_map *map, char **temp)
+static void	extend_ff(t_map *map, char **temp)
 {
 	int	temp_x;
 	int	temp_y;
@@ -35,12 +35,13 @@ static void	extend(t_map *map, char **temp)
 
 void	flood_fill(t_map *map, char **temp)
 {
+	ft_print(temp);
 	if (temp[map->flood_fill_x][map->flood_fill_y]
 		&& temp[map->flood_fill_x][map->flood_fill_y] != 'F'
 		&& temp[map->flood_fill_x][map->flood_fill_y] != '1')
 	{
-		if (map->map[map->flood_fill_x][map->flood_fill_y] == 'C'
-			|| map->map[map->flood_fill_x][map->flood_fill_y] == 'E')
+		if (temp[map->flood_fill_x][map->flood_fill_y] == 'C'
+			|| temp[map->flood_fill_x][map->flood_fill_y] == 'E')
 			map->flood_fill_collectible += 1;
 		if (temp[map->flood_fill_x][map->flood_fill_y] != '1'
 			&& temp[map->flood_fill_x][map->flood_fill_y] != '\0'
@@ -49,5 +50,5 @@ void	flood_fill(t_map *map, char **temp)
 	}
 	else
 		return ;
-	extend(map, temp);
+	extend_ff(map, temp);
 }

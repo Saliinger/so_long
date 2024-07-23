@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:10:05 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 18:05:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,18 @@ void	ft_parsing(t_map *map, char **argv)
 
 	data_init(map, argv);
 	temp = map_c(map);
+	map->flood_fill_x = map->player_x;
+	map->flood_fill_y = map->player_y;
 	flood_fill(map, temp);
 	free_temp(temp);
+	ft_printf("1\n");
 	if (map->x > 60)
 		to_large(map);
+	ft_printf("1\n");
 	if (ft_valid(map) == 0)
 		free_map(map);
+	ft_printf("c+e %d\n cf %d\n", map->c + map->e, map->flood_fill_collectible);
 	if (map->c + map->e != map->flood_fill_collectible)
 		free_map(map);
+	ft_printf("1\n");
 }

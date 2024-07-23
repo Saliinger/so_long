@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 10:49:51 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:23:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/23 18:02:32 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,26 @@
 
 void	ft_verify_element(t_map *map)
 {
-	int		i;
-	int		j;
-	t_map	*temp;
+	int	i;
+	int	j;
 
 	i = 0;
-	temp = map;
-	while (temp->map[i] != NULL)
+	while (map->map[i] != NULL)
 	{
 		j = 0;
-		while (temp->map[i][j] != '\n' && temp->map[i][j] != '\0')
+		while (map->map[i][j] != '\n' && map->map[i][j] != '\0')
 		{
-			if (temp->map[i][j] == 'E')
-				temp->e += 1;
-			if (temp->map[i][j] == 'P')
-			{
-				temp->flood_fill_x = i;
-				temp->flood_fill_y = j;
-				temp->p += 1;
-			}
-			if (temp->map[i][j] == 'C')
-				temp->c += 1;
-			if (temp->map[i][j] == '0')
-				temp->s += 1;
+			if (map->map[i][j] != 'E' && map->map[i][j] != 'P'
+				&& map->map[i][j] != 'C' && map->map[i][j] != '0')
+				map->unexpected += 1;
+			if (map->map[i][j] == 'E')
+				map->e += 1;
+			if (map->map[i][j] == 'P')
+				map->p += 1;
+			if (map->map[i][j] == 'C')
+				map->c += 1;
+			if (map->map[i][j] == '0')
+				map->s += 1;
 			j++;
 		}
 		i++;
