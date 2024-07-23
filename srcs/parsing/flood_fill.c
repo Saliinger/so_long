@@ -34,8 +34,7 @@ static void	extend_ff(t_map *map, char **temp)
 }
 
 void	flood_fill(t_map *map, char **temp)
-{
-	ft_print(temp);
+{\
 	if (temp[map->flood_fill_x][map->flood_fill_y]
 		&& temp[map->flood_fill_x][map->flood_fill_y] != 'F'
 		&& temp[map->flood_fill_x][map->flood_fill_y] != '1')
