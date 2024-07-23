@@ -28,7 +28,11 @@ void	ft_verify_element(t_map *map)
 			if (temp->map[i][j] == 'E')
 				temp->e += 1;
 			if (temp->map[i][j] == 'P')
-				temp->p += 1;
+            {
+                temp->flood_fill_x = i;
+                temp->flood_fill_y = j;
+                temp->p += 1;
+            }
 			if (temp->map[i][j] == 'C')
 				temp->c += 1;
 			if (temp->map[i][j] == '0')

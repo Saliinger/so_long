@@ -39,6 +39,9 @@ typedef struct s_map
 	int			s;
 	int			player_x;
 	int			player_y;
+    int         flood_fill_collectible;
+    int         flood_fill_x;
+    int         flood_fill_y;
 }				t_map;
 
 typedef struct s_data
@@ -73,6 +76,7 @@ void			ft_map_chequer(t_map *map, char **argv);
 void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
 bool			is_ber(char *str);
+void flood_fill(t_map *map);
 
 // window
 int				ft_window(t_map *map);
@@ -85,6 +89,7 @@ bool			collision(t_data *data, int x, int y);
 void			ft_print(char **map);
 void			ft_error(t_data *data);
 void			clear_data(t_data *data);
+void	free_map(t_map *map);
 
 // image
 void			init_map(t_map *map, t_data *data);

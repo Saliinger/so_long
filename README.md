@@ -31,3 +31,8 @@ X  display pb parsing
    map max size x 60 block
 
 
+flood fill 
+haut bas gauche droite + check nbr C + E
+
+
+

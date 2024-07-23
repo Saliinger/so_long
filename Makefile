@@ -24,6 +24,7 @@ SRCS        :=	main.c\
 				${MOVE_DIR}/collision.c\
 				${MOVE_DIR}/move_player.c\
 				${PARSE_DIR}/element.c\
+				${PARSE_DIR}/flood_fill.c\
 				${PARSE_DIR}/ft_valid.c\
 				${PARSE_DIR}/is_ber.c\
 				${PARSE_DIR}/parsing.c\

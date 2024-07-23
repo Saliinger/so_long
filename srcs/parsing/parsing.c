@@ -12,24 +12,11 @@
 
 #include "../../include/so_long.h"
 
-static void	free_map(t_map *map)
-{
-	int	i;
 
-	i = 0;
-	while (map->map[i])
-	{
-		free(map->map[i]);
-		i++;
-	}
-	free(map->map);
-	free(map);
-	exit(EXIT_FAILURE);
-}
 
 static void	to_large(t_map *map)
 {
-	ft_printf("the map is too big\n x : %d > 60 || y : %d > 32\n", map->x,
+	ft_printf("the map is too big\nx : %d > 60 || y : %d > 32\n", map->x,
 		map->y);
 	free_map(map);
 }
@@ -44,4 +31,5 @@ void	ft_parsing(t_map *map, char **argv)
 	ft_not_square(map);
 	if (ft_valid(map) == 0)
 		free_map(map);
+    flood_fill(map);
 }
