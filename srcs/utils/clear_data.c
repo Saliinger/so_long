@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:55:33 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 15:21:27 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,8 @@ static void	clear_map(t_data *data)
 	free(data->map);
 }
 
-void	clear_data(t_data *data, t_map *map)
+void	clear_data(t_data *data)
 {
-    free_map(map);
 	clear_map(data);
 	mlx_terminate(data->mlx);
 	free(data);
