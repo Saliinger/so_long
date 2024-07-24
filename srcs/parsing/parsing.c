@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 18:05:10 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 13:03:46 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	ft_parsing(t_map *map, char **argv)
 	char	**temp;
 
 	data_init(map, argv);
-    if (map->w != 1)
-        wall(map);
+	if (map->w != 1)
+		wall(map);
 	temp = map_c(map);
 	flood_fill(map, temp);
 	free_temp(temp);

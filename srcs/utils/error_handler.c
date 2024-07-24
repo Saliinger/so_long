@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error_hendler.c                                    :+:      :+:    :+:   */
+/*   error_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:55:37 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 13:03:59 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	ft_error(t_data *data)
 	exit(EXIT_FAILURE);
 }
 
-void wall(t_map *map)
+void	wall(t_map *map)
 {
-    ft_printf("Error\nwall is not complete\n");
-    free_map(map);
+	ft_printf("Error\nwall is not complete\n");
+	free_map(map);
 }
