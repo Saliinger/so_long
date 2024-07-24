@@ -23,6 +23,7 @@ SRCS        :=	main.c\
 				${INIT_DIR}/map.c\
 				${MOVE_DIR}/collision.c\
 				${MOVE_DIR}/move_player.c\
+				${PARSE_DIR}/border_are_straight.c\
 				${PARSE_DIR}/element.c\
 				${PARSE_DIR}/flood_fill.c\
 				${PARSE_DIR}/ft_valid.c\

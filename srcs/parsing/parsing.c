@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 10:51:58 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 13:03:46 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 20:05:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void	free_temp(char **temp)
 static void	data_init(t_map *map, char **argv)
 {
 	ft_map_chequer(map, argv);
+	if (border_are_straight(map) == false)
+		border_not_straight(map);
 	map->w = ft_verify_wall(map);
 	ft_verify_element(map);
 	ft_not_square(map);

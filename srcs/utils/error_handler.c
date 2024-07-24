@@ -37,3 +37,9 @@ void	map_empty(t_map *map)
 	ft_printf("Error\nthe map is empty cause of line malloc fail\n");
 	free_map(map);
 }
+
+void border_not_straight(t_map *map)
+{
+    ft_printf("Error\nborder are not straight\n");
+	free_map(map);
+}
