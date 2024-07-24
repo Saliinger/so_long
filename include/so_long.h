@@ -20,7 +20,6 @@
 # include "../libft/printf/ft_printf.h"
 # include <fcntl.h>
 # include <stdbool.h>
-# include <stdio.h>
 # include <stdlib.h>
 
 // structure
@@ -89,12 +88,12 @@ bool			collision(t_data *data, int x, int y);
 
 // utils
 void			ft_print(char **map);
-void			clear_data(t_data *data);
+void			clear_data(t_data *data, t_map *map);
 void			free_map(t_map *map);
 char			**map_c(t_map *map);
 
 // error
-void			ft_error(t_data *data);
+void			ft_error(t_data *data, t_map *map);
 void			to_large(t_map *map);
 void			wall(t_map *map);
 

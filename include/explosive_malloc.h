@@ -1,36 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   clear_data.c                                       :+:      :+:    :+:   */
+/*   explosive_malloc.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/11 13:55:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:55:33 by anoukan          ###   ########.fr       */
+/*   Created: 2024/07/24 13:16:00 by ekrebs            #+#    #+#             */
+/*   Updated: 2024/07/24 15:15:37 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../include/so_long.h"
+#ifndef EXPLOSIVE_MALLOC_H
+# define EXPLOSIVE_MALLOC_H
 
-static void	clear_map(t_data *data)
-{
-	int	i;
+#include <stdlib.h>
+void    *ft_explosive_malloc(int size, const char * file, const char *func, int line);
 
-	i = 0;
-	while (data->map->map[i])
-	{
-		free(data->map->map[i]);
-		i++;
-	}
-	free(data->map->map);
-	free(data->map);
-}
-
-void	clear_data(t_data *data, t_map *map)
-{
-    free_map(map);
-	clear_map(data);
-	mlx_terminate(data->mlx);
-	free(data);
-	exit(EXIT_SUCCESS);
-}
+#define malloc(x) ft_explosive_malloc(x, __FILE__, __FUNCTION__, __LINE__)
+#endif

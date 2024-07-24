@@ -19,9 +19,9 @@ void	to_large(t_map *map)
 	free_map(map);
 }
 
-void	ft_error(t_data *data)
+void	ft_error(t_data *data, t_map *map)
 {
-	clear_data(data);
+	clear_data(data, map);
 	ft_printf("Error\n%s\n", mlx_strerror(mlx_errno));
 	exit(EXIT_FAILURE);
 }
