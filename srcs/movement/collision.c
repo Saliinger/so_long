@@ -35,7 +35,7 @@ bool	collision(t_data *data, int new_x, int new_y)
 		&& new_y == data->exit->instances[0].y
 		&& (int)data->collectible->count == collected)
 	{
-		ft_printf("you win");
+		ft_printf("you win\n");
 		clear_data(data);
 	}
 	return (true);
