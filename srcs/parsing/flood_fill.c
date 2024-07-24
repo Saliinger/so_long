@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:02:20 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 18:08:02 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 12:47:55 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static void	extend_ff(t_map *map, char **temp)
 }
 
 void	flood_fill(t_map *map, char **temp)
-{\
+{
 	if (temp[map->flood_fill_x][map->flood_fill_y]
 		&& temp[map->flood_fill_x][map->flood_fill_y] != 'F'
 		&& temp[map->flood_fill_x][map->flood_fill_y] != '1')
