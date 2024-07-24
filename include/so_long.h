@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 15:22:39 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 17:42:08 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ char			**map_c(t_map *map);
 void			ft_error(t_data *data);
 void			to_large(t_map *map);
 void			wall(t_map *map);
+void			map_empty(t_map *map);
 
 // image
 void			init_map(t_map *map, t_data *data);

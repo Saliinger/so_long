@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 15:22:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 17:43:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,11 @@ void	ft_error(t_data *data)
 void	wall(t_map *map)
 {
 	ft_printf("Error\nwall is not complete\n");
+	free_map(map);
+}
+
+void	map_empty(t_map *map)
+{
+	ft_printf("Error\nthe map is empty cause of line malloc fail\n");
 	free_map(map);
 }

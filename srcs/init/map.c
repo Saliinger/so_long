@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:58:54 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 22:27:48 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/24 17:48:29 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,30 +40,35 @@ static int	width(char *line)
 	return (i);
 }
 
-void	ft_map_chequer(t_map *map, char **argv)
+static void	extend_mapc(t_map *map)
 {
-	int		i;
 	char	*line;
-	t_map	*temp;
+	int		i;
 
-	i = 0;
-	init(map);
-	temp = map;
-	temp->y = open_fd(argv, map);
-	temp->map = (char **)malloc(sizeof(char *) * (temp->y + 1));
-	if (temp->map == NULL)
-		clear_map(map);
-	line = get_next_line(temp->fd);
+	line = get_next_line(map->fd);
 	if (line == NULL)
 		clear_map(map);
-	temp->x = width(line);
-	while (line)
+	i = 0;
+	map->x = width(line);
+	while (line != NULL)
 	{
-		temp->map[i] = ft_strdup(line);
+		map->map[i] = ft_strdup(line);
 		free(line);
-		line = get_next_line(temp->fd);
+		if (!map->map[i])
+			map_empty(map);
+		line = get_next_line(map->fd);
 		i++;
 	}
-	temp->map[i] = NULL;
+	map->map[i] = NULL;
 	free(line);
+}
+
+void	ft_map_chequer(t_map *map, char **argv)
+{
+	init(map);
+	map->y = open_fd(argv, map);
+	map->map = (char **)malloc(sizeof(char *) * (map->y + 1));
+	if (map->map == NULL)
+		clear_map(map);
+	extend_mapc(map);
 }
