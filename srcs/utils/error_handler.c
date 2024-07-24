@@ -25,3 +25,9 @@ void	ft_error(t_data *data)
 	ft_printf("Error\n%s\n", mlx_strerror(mlx_errno));
 	exit(EXIT_FAILURE);
 }
+
+void wall(t_map *map)
+{
+    ft_printf("Error\nwall is not complete\n");
+    free_map(map);
+}

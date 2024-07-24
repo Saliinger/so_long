@@ -38,6 +38,8 @@ void	ft_parsing(t_map *map, char **argv)
 	char	**temp;
 
 	data_init(map, argv);
+    if (map->w != 1)
+        wall(map);
 	temp = map_c(map);
 	flood_fill(map, temp);
 	free_temp(temp);
