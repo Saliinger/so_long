@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/25 12:06:02 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 13:08:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	main(int argc, char **argv)
 	init_tmap(map);
 	map->fd = open(argv[1], O_RDONLY);
 	if (map->fd == -1)
-		return (ft_printf("Error\nmap doesn't exist\n", 0));
+		return (free(map), ft_printf("Error\nmap doesn't exist\n", 0));
 	map->y = open_fd(argv, map);
 	map->x = ft_strlen(argv[1]);
 	ft_parsing(map, argv);
