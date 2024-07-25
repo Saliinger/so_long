@@ -308,3 +308,13 @@ MLX42: LodePNG: failed to open file for reading
 Error
 png didn't load
 71.[OK] 
+
+
+==975433==     in use at exit: 317,955 bytes in 3,107 blocks
+==975433==   total heap usage: 90,036 allocs, 86,929 frees, 27,276,193 bytes allocated
+
+==975259==     in use at exit: 317,955 bytes in 3,107 blocks
+==975259==   total heap usage: 83,007 allocs, 79,900 frees, 25,153,696 bytes allocated
+
+==974993==     in use at exit: 317,955 bytes in 3,107 blocks
+==974993==   total heap usage: 85,472 allocs, 82,365 frees, 25,888,062 bytes allocated
