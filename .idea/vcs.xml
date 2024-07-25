@@ -3,6 +3,8 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/MLX42" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/So_long-Tester" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/libft" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/so_long_tester" vcs="Git" />
   </component>
 </project>

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:36 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 17:43:15 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 08:00:36 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	map_empty(t_map *map)
 	free_map(map);
 }
 
-void border_not_straight(t_map *map)
+void	border_not_straight(t_map *map)
 {
-    ft_printf("Error\nborder are not straight\n");
+	ft_printf("Error\nborder are not straight\n");
 	free_map(map);
 }

@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:20 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/11 13:55:22 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 08:00:23 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ static mlx_image_t	*load_img(t_data *data, char *path)
 
 	texture = mlx_load_png(path);
 	if (!texture)
+	{
+		ft_printf("Error\npng didn't load\n");
 		ft_error(data);
+	}
 	image = mlx_texture_to_image(data->mlx, texture);
 	if (!image)
 		ft_error(data);

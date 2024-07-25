@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 11:45:33 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 17:42:08 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 08:00:10 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void			ft_verify_element(t_map *map);
 size_t			open_fd(char **argv, t_map *map);
 bool			is_ber(char *str);
 void			flood_fill(t_map *map, char **temp);
-bool             border_are_straight(t_map *map);
+bool			border_are_straight(t_map *map);
 
 // window
 int				ft_window(t_map *map);
@@ -98,7 +98,7 @@ void			ft_error(t_data *data);
 void			to_large(t_map *map);
 void			wall(t_map *map);
 void			map_empty(t_map *map);
-void            border_not_straight(t_map *map);
+void			border_not_straight(t_map *map);
 
 // image
 void			init_map(t_map *map, t_data *data);

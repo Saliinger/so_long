@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 14:52:13 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:18:03 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 07:59:49 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (ft_printf("Error\nno map found\n"), 0);
+	if (argc > 2)
+		return (ft_printf("Error\ntoo many argument\n"), 0);
 	if (is_ber(argv[1]) == false)
 		return (ft_printf("Error\nmap is not .ber\n"), 0);
 	map = malloc(sizeof(t_map));
