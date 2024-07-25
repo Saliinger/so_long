@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:11:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 15:28:47 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 13:13:18 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,5 +48,6 @@ int	ft_window(t_map *map)
 	init_map(map, data);
 	mlx_key_hook(data->mlx, ft_hook, data);
 	mlx_loop(data->mlx);
-	return (EXIT_SUCCESS);
+	clear_data(data);
+	return (0);
 }
