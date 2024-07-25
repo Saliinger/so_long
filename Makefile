@@ -80,6 +80,7 @@ clean:
 			@ ${RM} ${OBJS}
 			@$(MAKE) -C ./libft clean
 			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+			@ rm -rf ./MLX42/build
 
 fclean:     clean
 			@ ${RM} ${NAME}
