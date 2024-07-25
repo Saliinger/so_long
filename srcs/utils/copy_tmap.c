@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 17:01:04 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/24 13:03:20 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 16:03:47 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	**map_c(t_map *map)
 	char	**temp;
 	int		i;
 
-	temp = (char **)malloc(sizeof(char *) * (map->y + 1));
+	temp = ft_calloc(map->y + 1, sizeof(char *));
 	if (!temp)
 		free_map(map);
 	i = 0;

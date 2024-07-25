@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:44 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/23 17:23:19 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 16:01:15 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,17 @@ void	free_map(t_map *map)
 {
 	int	i;
 
-	i = 0;
-	while (map->map[i])
+	if (map && map->map)
 	{
-		free(map->map[i]);
-		i++;
+		i = 0;
+		while (map->map[i])
+		{
+			free(map->map[i]);
+			i++;
+		}
+		free(map->map);
 	}
-	free(map->map);
-	free(map);
+	if (map)
+		free(map);
 	exit(EXIT_FAILURE);
 }

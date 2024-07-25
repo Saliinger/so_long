@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 13:11:19 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/25 13:13:18 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 16:08:35 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,13 @@
 
 static void	data_fail(t_data *data, t_map *map)
 {
-	int	i;
-
-	i = 0;
-	while (map->map[i])
+	if (data)
 	{
-		free(map->map[i]);
-		i++;
+		clear_img(data);
+		mlx_terminate(data->mlx);
+		free(data);
 	}
-	free(map->map);
-	free(map);
-	mlx_terminate(data->mlx);
-	free(data);
+	free_map(map);
 }
 
 int	ft_window(t_map *map)

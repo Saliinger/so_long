@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:58:54 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/25 11:16:40 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 16:01:25 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,10 @@
 
 static void	clear_map(t_map *map)
 {
-	free(map->map);
-	free(map);
+	if (map && map->map)
+		free(map->map);
+	if (map)
+		free(map);
 	ft_printf("Error\nthe map is empty\n");
 	exit(EXIT_FAILURE);
 }

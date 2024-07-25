@@ -6,13 +6,13 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:55:31 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/25 11:58:27 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 16:07:42 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/so_long.h"
 
-static void	clear_img(t_data *data)
+void	clear_img(t_data *data)
 {
 	if (data->background)
 		mlx_delete_image(data->mlx, data->background);

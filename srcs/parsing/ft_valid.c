@@ -6,7 +6,7 @@
 /*   By: anoukan <anoukan@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 13:54:27 by anoukan           #+#    #+#             */
-/*   Updated: 2024/07/25 15:47:21 by anoukan          ###   ########.fr       */
+/*   Updated: 2024/07/25 15:54:39 by anoukan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_valid(t_map *map)
 {
 	if (map->e == 1 && map->p == 1 && map->c >= 1 && map->notsquare == 1
-		&& map->x < 60 && map->y < 30 && map->unexpected == 0 && map->c
+		&& map->x < 61 && map->y < 31 && map->unexpected == 0 && map->c
 		+ map->e == map->flood_fill_collectible)
 		return (1);
 	else
